@@ -17,6 +17,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         App.getInstance().addActivity(this);
         setContentView(getLayout());
+        initToolBar();
         initView();
         initData();
         initEvent();
@@ -24,6 +25,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract int getLayout();
+
+    protected abstract void initToolBar();
 
     protected abstract void initView();
 
