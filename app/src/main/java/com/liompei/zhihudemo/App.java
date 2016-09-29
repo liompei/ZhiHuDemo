@@ -2,6 +2,7 @@ package com.liompei.zhihudemo;
 
 import android.app.Activity;
 import android.app.Application;
+import android.graphics.Color;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,9 @@ import java.util.List;
  */
 
 public class App extends Application {
+
+    public static int COLOR_OF_DIALOG = R.color.primary;
+    public static int COLOR_OF_DIALOG_CONTENT = Color.WHITE;
 
     private static App instance;
 
