@@ -1,6 +1,10 @@
 package com.liompei.zhihudemo;
 
+import android.app.Activity;
 import android.app.Application;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Liompei
@@ -11,14 +15,42 @@ public class App extends Application {
 
     private static App instance;
 
+    private List<Activity> mActivityList = new ArrayList<>();
 
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
     }
 
 
     public static App getInstance() {
         return instance;
     }
+
+
+    public void addActivity(Activity activity) {
+        mActivityList.add(activity);
+    }
+
+    public void deleteActivity(Activity activity) {
+        mActivityList.remove(activity);
+    }
+
+    public void finishAllActivity() {
+        for (Activity activity : mActivityList) {
+            activity.finish();
+        }
+        mActivityList.clear();
+    }
+
+    // 退出
+    public void exit() {
+        for (Activity activity : mActivityList) {
+            activity.finish();
+        }
+        mActivityList.clear();
+        System.exit(0);
+    }
+
 }
