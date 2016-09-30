@@ -2,6 +2,8 @@ package com.liompei.zhihudemo.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.liompei.zhihudemo.App;
@@ -35,6 +37,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void initEvent() {
 
+    }
+
+
+    public void replaceFragment(int id_content, Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(id_content, fragment);
+        transaction.commit();
     }
 
     @Override
