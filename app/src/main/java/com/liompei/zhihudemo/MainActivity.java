@@ -8,7 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -50,7 +49,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
         mNavigationView.setNavigationItemSelectedListener(this);
-        mNavigationView.getMenu().getItem(0).setChecked(true);
+//        mNavigationView.getMenu().getItem(0).setChecked(true);
         replaceFragment(R.id.frame_container, new HomeFragment());
 
 
@@ -113,18 +112,21 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            replaceFragment(R.id.frame_container, new HomeFragment());
+        if (id == R.id.nav_data) {
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_connection) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_evevt) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_setting) {
+
+        } else if (id == R.id.nav_feedback) {
+
+        } else if (id == R.id.nav_help) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_about) {
 
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -141,15 +143,15 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 }

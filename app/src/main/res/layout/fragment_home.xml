@@ -1,24 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-    <com.wang.avi.AVLoadingIndicatorView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:indicatorColor="@color/primary"
-        app:indicatorName="LineScaleIndicator"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email"/>
+        <com.liompei.zhihudemo.view.AutoRecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:scrollbars="none"/>
 
-</android.support.design.widget.CoordinatorLayout>
+        <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal|top">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Google+"
+                android:textSize="24sp"/>
+        </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
+
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/av_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:indicatorColor="@color/primary"
+            app:indicatorName="LineScaleIndicator"/>
+
+    </FrameLayout>
+
+
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -1,35 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="none">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_data"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="主页"/>
+            android:title="个人资料"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_connection"
+            android:visible="true"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery"/>
+            android:title="人脉"/>
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_evevt"
+            android:visible="true"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Slideshow"/>
+            android:title="活动"/>
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_setting"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Tools"/>
+            android:title="设置"/>
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="沟通">
         <menu>
+
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="发送反馈"/>
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="帮助"/>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_gallery"
-                android:title="Share"/>
+                android:title="分享"/>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_about"
                 android:icon="@drawable/ic_menu_gallery"
-                android:title="Send"/>
+                android:title="关于"/>
         </menu>
     </item>
 

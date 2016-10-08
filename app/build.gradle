@@ -4,6 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.liompei.zhihudemo"
         minSdkVersion 14
         targetSdkVersion 24
@@ -30,4 +31,10 @@ dependencies {
     compile 'com.wang.avi:library:2.1.3'
     // ... other dependencies here
     compile 'com.afollestad.material-dialogs:core:0.9.0.2'
+    //recyclerView的头布局
+    compile 'com.bartoszlipinski:recyclerviewheader2:2.0.1'
+    //图片加载框架
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //圆形头像
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

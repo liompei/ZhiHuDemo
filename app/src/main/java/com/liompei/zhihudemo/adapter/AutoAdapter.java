@@ -17,7 +17,6 @@ public class AutoAdapter extends RecyclerView.Adapter<AutoAdapter.MyHolder> {
 
 
 
-
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new MyHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_auto,parent,false));
@@ -25,7 +24,7 @@ public class AutoAdapter extends RecyclerView.Adapter<AutoAdapter.MyHolder> {
 
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
-        holder.text.setText("aaaa");
+        holder.text.setText("test");
 
     }
 
