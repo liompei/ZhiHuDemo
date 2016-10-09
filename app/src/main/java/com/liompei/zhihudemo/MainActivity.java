@@ -12,7 +12,7 @@ import android.view.MenuItem;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.liompei.zhihudemo.base.BaseActivity;
-import com.liompei.zhihudemo.ui.activity.HomeFragment;
+import com.liompei.zhihudemo.ui.fragment.HomeFragment;
 import com.liompei.zhihudemo.util.ShowToast;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {

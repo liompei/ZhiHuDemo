@@ -1,14 +1,15 @@
-package com.liompei.zhihudemo.ui.activity;
+package com.liompei.zhihudemo.ui.fragment;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader;
 import com.liompei.zhihudemo.R;
-import com.liompei.zhihudemo.adapter.AutoAdapter;
+import com.liompei.zhihudemo.adapter.HomeFragmentAdapter;
 import com.liompei.zhihudemo.base.BaseFragment;
 import com.liompei.zhihudemo.callback.LoadMoreListener;
 import com.liompei.zhihudemo.callback.LoadResultCallBack;
@@ -25,7 +26,7 @@ public class HomeFragment extends BaseFragment implements LoadResultCallBack, Sw
     private AVLoadingIndicatorView av_loading;
     private AutoRecyclerView mRecyclerView;
     private RecyclerViewHeader mRecyclerViewHeader;
-    private AutoAdapter adapter;
+    private HomeFragmentAdapter adapter;
     private SwipeRefreshLayout swipe;
 
 
@@ -47,16 +48,16 @@ public class HomeFragment extends BaseFragment implements LoadResultCallBack, Sw
             @Override
             public void loadMore() {
                 //adapter加载更多
-                //mAdapter.loadNextPage();
+                adapter.loadNext();
             }
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         //需要加载图片
         mRecyclerView.setOnPauseListenerParams(false,true);
         mRecyclerViewHeader.attachTo(mRecyclerView);
-        adapter = new AutoAdapter();
+        adapter = new HomeFragmentAdapter(getActivity(),mRecyclerView,this);
         mRecyclerView.setAdapter(adapter);
-
+        adapter.loadFirst();
         av_loading.show();
     }
 
@@ -78,16 +79,20 @@ public class HomeFragment extends BaseFragment implements LoadResultCallBack, Sw
     //回调
     @Override
     public void onSuccess(int result, Object object) {
-
+        Toast.makeText(getActivity(), "加载完成", Toast.LENGTH_SHORT).show();
+        av_loading.hide();
+        if (swipe.isRefreshing()){
+            swipe.setRefreshing(false);
+        }
     }
 
     @Override
     public void onError(int code, String msg) {
-
+        Toast.makeText(getActivity(), "加载失败", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onRefresh() {
-
+        adapter.loadFirst();
     }
 }

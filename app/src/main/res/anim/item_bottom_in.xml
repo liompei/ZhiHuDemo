@@ -6,10 +6,10 @@
         android:fillAfter="true"
         android:fromYDelta="100.00%"
         android:toYDelta="0.00"/>
-    <alpha
-        android:duration="@android:integer/config_longAnimTime"
-        android:fillAfter="true"
-        android:fromAlpha="0.0"
-        android:toAlpha="0.1"/>
+    <!--<alpha-->
+        <!--android:duration="@android:integer/config_longAnimTime"-->
+        <!--android:fillAfter="true"-->
+        <!--android:fromAlpha="0.0"-->
+        <!--android:toAlpha="0.1"/>-->
 
 </set>
