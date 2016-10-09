@@ -17,6 +17,13 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/login_color</item>
+        <item name="colorAccent">@color/login_color</item>
+        <item name="android:navigationBarColor">@color/login_color</item>
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="android:colorControlNormal">@color/secondary_text</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">@color/primary</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
