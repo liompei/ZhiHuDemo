@@ -14,9 +14,22 @@
 
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="AppNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <style name="FirstTheme" parent="AppNoActionBar">
+        <item name="colorPrimaryDark">@color/black</item>
+        <!-- AppCompatEditText默许状态状态设置底线色彩 -->
+        <item name="colorControlNormal">#CFD8DC</item>
+        <!-- AppCompatEditText选择的底线色彩 -->
+        <item name="colorControlActivated">#FFFFFF</item>
+
+
     </style>
 
 
