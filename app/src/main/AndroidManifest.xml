@@ -24,9 +24,9 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".ui.activity.LoginActivity">
-        </activity>
-        <activity android:name=".ui.activity.FirstActivity" android:theme="@style/FirstTheme">
+        <activity
+            android:name=".ui.activity.FirstActivity"
+            android:theme="@style/FirstTheme">
         </activity>
     </application>
 

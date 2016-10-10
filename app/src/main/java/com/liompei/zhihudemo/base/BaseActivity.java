@@ -18,6 +18,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        //标题栏透明
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 //            Window window = getWindow();
 //            // Translucent status bar
@@ -25,6 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 //                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
 //                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //        }
+
         App.getInstance().addActivity(this);
         setContentView(getLayout());
         initToolBar();

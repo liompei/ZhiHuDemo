@@ -57,6 +57,7 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener 
                     mLoginTransitionFragment = new LoginTransitionFragment();
                 }
                 transaction2.addToBackStack("2");
+
                 transaction2.replace(R.id.frame_container, mLoginTransitionFragment);
                 transaction2.commit();
                 break;

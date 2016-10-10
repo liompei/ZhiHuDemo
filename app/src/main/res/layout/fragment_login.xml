@@ -15,20 +15,29 @@
         android:orientation="vertical">
 
         <EditText
-            android:textSize="20sp"
-            android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="电子邮件"
-            android:textColorHint="#CFD8DC"/>
+            android:inputType="textEmailAddress"
+            android:textColorHint="#CFD8DC"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="密码"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#CFD8DC"
+            android:textSize="20sp"/>
 
         <RelativeLayout
-            android:id="@+id/to_continue"
+            android:id="@+id/to_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2.5dp"
             android:layout_marginRight="2.5dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/shape_login_push">
 
             <TextView
@@ -37,7 +46,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:text="继续"
+                android:text="登录"
                 android:textColor="@color/white"
                 android:textSize="16sp"/>
 
