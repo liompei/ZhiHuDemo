@@ -91,7 +91,7 @@ public class RegisterFragment extends BaseFragment implements View.OnClickListen
 
 
     //验证
-    public boolean validate() {
+    private boolean validate() {
         boolean valid = true;
         String email = a_email.getText().toString();
         String password = a_password.getText().toString();
