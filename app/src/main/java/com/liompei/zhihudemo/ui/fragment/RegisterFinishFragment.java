@@ -1,9 +1,11 @@
 package com.liompei.zhihudemo.ui.fragment;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.avos.avoscloud.AVUser;
 import com.liompei.zhihudemo.MainActivity;
 import com.liompei.zhihudemo.R;
 import com.liompei.zhihudemo.base.BaseFragment;
@@ -25,9 +27,9 @@ public class RegisterFinishFragment extends BaseFragment implements View.OnClick
 
     @Override
     protected void initView() {
-
         to_start = (RelativeLayout) findViewById(R.id.to_start);
         to_start.setOnClickListener(this);
+
 
     }
 
@@ -35,9 +37,19 @@ public class RegisterFinishFragment extends BaseFragment implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.to_start:
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), MainActivity.class);
-                break;
+                AVUser currentUser = AVUser.getCurrentUser();
+                if (currentUser != null) {
+                    //跳转到主页
+                    Intent intent = new Intent();
+                    intent.setClass(getActivity(), MainActivity.class);
+                    startActivity(intent);
+                    break;
+                } else {
+                    //没有缓存对象
+                    Log.d("aaa", "没有缓存对象");
+                }
+
+
         }
     }
 }
