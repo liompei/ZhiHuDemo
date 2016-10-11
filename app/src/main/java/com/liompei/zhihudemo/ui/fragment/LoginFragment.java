@@ -38,6 +38,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
                 intent.setClass(getActivity(), MainActivity.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.anim_right_in,R.anim.anim_left_out);
+                getActivity().finish();
                 break;
         }
     }

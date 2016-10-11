@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.Application;
 import android.graphics.Color;
 
+import com.avos.avoscloud.AVOSCloud;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        //如果使用美国节点，请加上这行代码 AVOSCloud.useAVCloudUS();
+        AVOSCloud.initialize(this, "pCitkmgIS03KBXMBk3sMKbbK-gzGzoHsz", "I4K2ikmExk25gsdodI3UvyKY");
+
     }
 
 
