@@ -2,6 +2,8 @@ package com.liompei.zhihudemo.ui.fragment;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -40,13 +42,13 @@ public class HomeFragment extends BaseFragment implements LoadResultCallBack, Sw
         av_loading = (AVLoadingIndicatorView) findViewById(R.id.av_loading);
         mRecyclerViewHeader = (RecyclerViewHeader) findViewById(R.id.header);
         mRecyclerView = (AutoRecyclerView) findViewById(R.id.recycler);
-        swipe= (SwipeRefreshLayout) findViewById(R.id.swipe);
+        swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
 
     }
 
     @Override
     protected void initEvent() {
-        swipe.setColorSchemeResources(android.R.color.holo_blue_light,android.R.color.holo_orange_light,android.R.color.holo_green_light,android.R.color.holo_red_light);
+        swipe.setColorSchemeResources(android.R.color.holo_blue_light, android.R.color.holo_orange_light, android.R.color.holo_green_light, android.R.color.holo_red_light);
         swipe.setOnRefreshListener(this);
         mRecyclerView.setHasFixedSize(false);
         mRecyclerView.setLoadMoreListener(new LoadMoreListener() {
@@ -58,10 +60,24 @@ public class HomeFragment extends BaseFragment implements LoadResultCallBack, Sw
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         //需要加载图片
-        mRecyclerView.setOnPauseListenerParams(false,true);
+        mRecyclerView.setOnPauseListenerParams(false, true);
         mRecyclerViewHeader.attachTo(mRecyclerView);
-        adapter = new HomeFragmentAdapter(getActivity(),mRecyclerView,this);
+        adapter = new HomeFragmentAdapter(getActivity(), mRecyclerView, this);
         mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                //dx  X轴滑动速度(右正左负)
+                //dy  Y轴滑动速度(下正上负)
+                Log.d("aaa", "dx: " + dx + "\ndy: " + dy);
+            }
+        });
         adapter.loadFirst();
         av_loading.show();
     }
@@ -86,7 +102,7 @@ public class HomeFragment extends BaseFragment implements LoadResultCallBack, Sw
     public void onSuccess(int result, Object object) {
         Toast.makeText(getActivity(), "加载完成", Toast.LENGTH_SHORT).show();
         av_loading.hide();
-        if (swipe.isRefreshing()){
+        if (swipe.isRefreshing()) {
             swipe.setRefreshing(false);
         }
     }
