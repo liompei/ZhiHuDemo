@@ -15,19 +15,23 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="电子邮件"
             android:inputType="textEmailAddress"
+            android:textColor="@color/white"
             android:textColorHint="#CFD8DC"
             android:textSize="20sp"/>
 
         <EditText
-            android:layout_marginTop="10dp"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="密码"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
             android:textColorHint="#CFD8DC"
             android:textSize="20sp"/>
 

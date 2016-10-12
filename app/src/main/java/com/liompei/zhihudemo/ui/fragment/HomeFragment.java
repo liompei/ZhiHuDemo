@@ -41,6 +41,11 @@ public class HomeFragment extends BaseFragment implements LoadResultCallBack, Sw
         mRecyclerViewHeader = (RecyclerViewHeader) findViewById(R.id.header);
         mRecyclerView = (AutoRecyclerView) findViewById(R.id.recycler);
         swipe= (SwipeRefreshLayout) findViewById(R.id.swipe);
+
+    }
+
+    @Override
+    protected void initEvent() {
         swipe.setColorSchemeResources(android.R.color.holo_blue_light,android.R.color.holo_orange_light,android.R.color.holo_green_light,android.R.color.holo_red_light);
         swipe.setOnRefreshListener(this);
         mRecyclerView.setHasFixedSize(false);

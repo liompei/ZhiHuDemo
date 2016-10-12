@@ -36,14 +36,19 @@ public class RegisterFragment extends BaseFragment implements View.OnClickListen
     @Override
     protected void initView() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitleTextColor(Color.WHITE);
-        mToolbar.setTitle("注册");
-        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
-        mToolbar.setNavigationIcon(R.drawable.ic_arrow_white_black_24dp);
         a_email = (EditText) findViewById(R.id.a_email);
         a_password = (EditText) findViewById(R.id.a_password);
         a_username = (EditText) findViewById(R.id.a_username);
         go_on = (RelativeLayout) findViewById(R.id.go_on);
+
+    }
+
+    @Override
+    protected void initEvent() {
+        mToolbar.setTitleTextColor(Color.WHITE);
+        mToolbar.setTitle("注册");
+        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
+        mToolbar.setNavigationIcon(R.drawable.ic_arrow_white_black_24dp);
         go_on.setOnClickListener(this);
     }
 

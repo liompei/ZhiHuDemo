@@ -28,9 +28,11 @@ public class RegisterFinishFragment extends BaseFragment implements View.OnClick
     @Override
     protected void initView() {
         to_start = (RelativeLayout) findViewById(R.id.to_start);
+    }
+
+    @Override
+    protected void initEvent() {
         to_start.setOnClickListener(this);
-
-
     }
 
     @Override

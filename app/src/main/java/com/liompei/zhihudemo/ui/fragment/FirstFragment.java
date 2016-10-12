@@ -28,15 +28,12 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener 
     protected void initView() {
         to_register = (RelativeLayout) findViewById(R.id.to_register);
         to_login = (RelativeLayout) findViewById(R.id.to_login);
-
-        to_register.setOnClickListener(this);
-        to_login.setOnClickListener(this);
-
     }
 
     @Override
     protected void initEvent() {
-
+        to_register.setOnClickListener(this);
+        to_login.setOnClickListener(this);
     }
 
     @Override
@@ -44,6 +41,7 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.to_register:
                 FragmentTransaction transaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction1.setCustomAnimations(R.anim.anim_bottom_in, R.anim.anim_top_out,R.anim.anim_top_in,R.anim.anim_bottom_out);
                 if (mRegisterFragment == null) {
                     mRegisterFragment = new RegisterFragment();
                 }
@@ -53,6 +51,7 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener 
                 break;
             case R.id.to_login:
                 FragmentTransaction transaction2 = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction2.setCustomAnimations(R.anim.anim_right_in, R.anim.anim_left_out,R.anim.anim_left_in,R.anim.anim_right_out);
                 if (mLoginTransitionFragment == null) {
                     mLoginTransitionFragment = new LoginTransitionFragment();
                 }

@@ -32,13 +32,15 @@ public class LoginTransitionFragment extends BaseFragment implements View.OnClic
     @Override
     protected void initView() {
         to_continue = (RelativeLayout) findViewById(R.id.to_continue);
-
         m_email = (EditText) findViewById(R.id.m_email);
         no_Register = (LinearLayout) findViewById(R.id.no_Register);
+
+    }
+
+    @Override
+    protected void initEvent() {
         no_Register.setVisibility(View.GONE);
-
         to_continue.setOnClickListener(this);
-
     }
 
     @Override
@@ -46,7 +48,7 @@ public class LoginTransitionFragment extends BaseFragment implements View.OnClic
         switch (v.getId()) {
             case R.id.to_continue:
 
-                if (!validate()){
+                if (!validate()) {
                     break;
                 }
 
@@ -73,18 +75,19 @@ public class LoginTransitionFragment extends BaseFragment implements View.OnClic
     }
 
     //跳转至下一个fragment
-    private void toStartFragment(){
+    private void toStartFragment() {
+
+
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(R.anim.anim_right_in, R.anim.anim_left_out,R.anim.anim_right_in,R.anim.anim_left_out);
+        transaction.setCustomAnimations(R.anim.anim_right_in, R.anim.anim_left_out, R.anim.anim_left_in, R.anim.anim_right_out);
         if (mLoginFragment == null) {
             mLoginFragment = new LoginFragment();
         }
+        mLoginFragment.setEmail(m_email.getText().toString());
         transaction.addToBackStack("");
         transaction.replace(R.id.frame_container, mLoginFragment);
         transaction.commit();
-
     }
-
 
 
 }
