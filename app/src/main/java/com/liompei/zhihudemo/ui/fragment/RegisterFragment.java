@@ -48,7 +48,8 @@ public class RegisterFragment extends BaseFragment implements View.OnClickListen
         mToolbar.setTitleTextColor(Color.WHITE);
         mToolbar.setTitle("注册");
         ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
-        mToolbar.setNavigationIcon(R.drawable.ic_arrow_white_black_24dp);
+//        mToolbar.setNavigationIcon(R.drawable.ic_arrow_white_black_24dp);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         go_on.setOnClickListener(this);
     }
 
