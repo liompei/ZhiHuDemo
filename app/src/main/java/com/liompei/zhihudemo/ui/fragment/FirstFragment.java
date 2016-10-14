@@ -14,7 +14,6 @@ import com.liompei.zhihudemo.base.BaseFragment;
 
 public class FirstFragment extends BaseFragment implements View.OnClickListener {
 
-
     private RelativeLayout to_register, to_login;
     private RegisterFragment mRegisterFragment;
     private LoginTransitionFragment mLoginTransitionFragment;

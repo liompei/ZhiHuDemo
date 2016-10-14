@@ -41,6 +41,8 @@ dependencies {
     compile 'com.android.support:cardview-v7:24.2.1'
     //EventBus
     compile 'org.greenrobot:eventbus:3.0.0'
+    //fab
+    compile 'com.github.clans:fab:1.6.4'
 
 
 }
