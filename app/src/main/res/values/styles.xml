@@ -7,7 +7,7 @@
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:colorBackground">@color/white</item>
         <item name="android:textColorSecondary">@color/secondary_text</item>
-        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
         <item name="android:textColorPrimary">@color/primary_text</item>
         <item name="android:navigationBarColor">@color/black</item>
@@ -59,5 +59,18 @@
         <!-- 设置Menu窗口不覆盖Toolbar视图 -->
         <item name="overlapAnchor">false</item>
     </style>
+
+    <style name="MenuButtonsSmallGreen">
+        <item name="fab_colorNormal">#43A047</item>
+        <item name="fab_colorPressed">#2E7D32</item>
+        <item name="fab_colorRipple">#1B5E20</item>
+    </style>
+    <style name="MenuButtonsSmallBlue">
+        <item name="fab_size">mini</item>
+        <item name="fab_colorNormal">#1565C0</item>
+        <item name="fab_colorPressed">#2272CD</item>
+        <item name="fab_colorRipple">#62B2FF</item>
+    </style>
+
 
 </resources>

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
-        vectorDrawables.useSupportLibrary = true
+        //vectorDrawables.useSupportLibrary = true
         applicationId "com.liompei.zhihudemo"
         minSdkVersion 14
         targetSdkVersion 24
@@ -13,6 +13,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
